@@ -29,6 +29,43 @@ enum layers {
     _MOUSE,
 };
 
+#ifdef RGB_MATRIX_ENABLE
+led_config_t g_led_config = { {
+    // Key matrix to LED index
+    // Left 1-18
+            {4,  3,   2,   1,   0},
+            {5,  6,   7,   8,   9},
+            {14, 13,  12,  11,  10},
+    {NO_LED, NO_LED,  15,  16,  17},
+                                    // Right 1-18
+                                    {23, 24, 29, 30, 35},
+                                    {22, 25, 28, 31, 34},
+                                    {21, 26, 27, 32, 33},
+                                    {18, 19, 20, NO_LED, NO_LED},
+}, {
+    // LED index to physical position
+    // Left 1-18
+    {122,85},{102,85},{81,85},{102,64},{102,43},{102,21},
+    {81,21},{81,43},{81,64},{61,64},{61,43},{61,21},
+    {41,21},{41,43},{41,64},{20,64},{20,43},{20,21},
+    // Right 1-18
+    {143,85},{163,85},{183,85},{163,64},{163,43},{163,21},
+    {183,21},{183,43},{183,64},{204,64},{204,43},{204,21},
+    {224,21},{224,43},{224,64},{244,64},{244,43},{244,21}
+}, {
+    // LED index to flag
+    // Left 1-18
+    4,4,4,4,4,4,
+    4,4,4,4,4,4,
+    4,4,4,4,4,4,
+    // Right 1-18
+    4,4,4,4,4,4,
+    4,4,4,4,4,4,
+    4,4,4,4,4,4
+} };
+
+#endif
+
 static uint16_t default_animation = RGB_MATRIX_CYCLE_SPIRAL;
 static int default_speed = 50;
 static uint16_t secondary_animation = RGB_MATRIX_HUE_WAVE;

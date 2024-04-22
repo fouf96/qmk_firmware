@@ -32,10 +32,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 led_config_t g_led_config = { {
     // Key matrix to LED index
     // Left 1-18
-            {17, 12, 11,  6,  5},
-            {16, 13, 10,  7,  4},
-            {15, 14,  9,  8,  3},
-    {NO_LED, NO_LED,  2,  1,  0},
+            {4,  3,   2,   1,   0},
+            {5,  6,   7,   8,   9},
+            {14, 13,  12,  11,  10},
+    {NO_LED, NO_LED,  15,  16,  17},
                                     // Right 1-18
                                     {23, 24, 29, 30, 35},
                                     {22, 25, 28, 31, 34},
